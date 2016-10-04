@@ -1,0 +1,21 @@
+{
+  "name": "re-koa1",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ziyi2 <673191402@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ziyi2/re-koa1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}

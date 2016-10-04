@@ -1,5 +1,11 @@
-#idea setting files
+#idea
 .idea
 
-#node_modules
+#node
 node_modules
+
+#bower
+bower_modules
+
+#npm
+npm-debug.*

@@ -1,20 +1,24 @@
-var app = require('koa')()
+const app = require('koa')()
   , koa = require('koa-router')()
   , logger = require('koa-logger')
   , json = require('koa-json')
   , views = require('koa-views')
-  , onerror = require('koa-onerror');
+  , onerror = require('koa-onerror')
+  , mongoose = require('mongoose');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const index = require('./server/routes/index');
+const users = require('./server/routes/users');
 
 // global middlewares
 // Must be used before any router is used
 app.use(views(__dirname + '/views', {
   map: {
-    html: 'ejs'   //ejs emplate engines with html
+    html: 'ejs'   //ejs模板引擎
   }
 }));
+
+//初始化配置
+require('./config')(mongoose);
 
 
 app.use(require('koa-bodyparser')());
@@ -23,9 +27,9 @@ app.use(logger());
 
 //打印日志中间件
 app.use(function *(next){
-  var start = new Date;
+  let start = new Date;
   yield next;
-  var ms = new Date - start;
+  let ms = new Date - start;
   console.log('%s %s - %s', this.method, this.url, ms);
 });
 
@@ -33,7 +37,8 @@ app.use(require('koa-static')(__dirname + '/public'));
 
 // routes definition
 koa.use('/', index.routes(), index.allowedMethods());
-koa.use('/users', users.routes(), users.allowedMethods());
+koa.use('/user', users.routes(), users.allowedMethods());
+
 
 // mount root routes  
 app.use(koa.routes());
