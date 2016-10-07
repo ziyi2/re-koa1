@@ -16,24 +16,27 @@ $(function() {
      * author:   zhuxiankang
      * parm:     event
      */
-    $('#register').click(function(event){
-        event.preventDefault();     //阻止默认的表单提交submit方法
-        var user = {
-            username:$('#register_username').val(),
-            password:$('#register_password').val(),
-            email:$('#register_email').val()
-        };
-
-        //省略校验步骤
-
-
-        ajax().register(user).then(
-            function(data) {
-                console.log(data);
-            }
-        )
-
-    });
+    // $('#register').click(function(event){
+    //     event.preventDefault();     //阻止默认的表单提交submit方法
+    //     var user = {
+    //         username:$('#register_username').val(),
+    //         password:$('#register_password').val(),
+    //         email:$('#register_email').val()
+    //     };
+    //
+    //     //省略校验步骤
+    //
+    //
+    //     ajax().register(user).then(
+    //         function(data) {
+    //             if(data.status === httpStatus.user_exist) {
+    //                 $('#register_username').val('');
+    //                 alert('用户名已存在');
+    //             }
+    //         }
+    //     )
+    //
+    // });
 
 
 

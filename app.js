@@ -4,10 +4,11 @@ const app = require('koa')()
   , json = require('koa-json')
   , views = require('koa-views')
   , onerror = require('koa-onerror')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , session = require('koa-session');
 
-const index = require('./server/routes/index');
-const users = require('./server/routes/users');
+const index = require('./server/routes/index.router');
+const user = require('./server/routes/user.router');
 
 // global middlewares
 // Must be used before any router is used
@@ -35,9 +36,14 @@ app.use(function *(next){
 
 app.use(require('koa-static')(__dirname + '/public'));
 
+//session
+app.keys=['riLbqTemd3NAdUBwUU7nfsuteqwapN'];
+app.use(session(app));
+
+
 // routes definition
 koa.use('/', index.routes(), index.allowedMethods());
-koa.use('/user', users.routes(), users.allowedMethods());
+koa.use('/user', user.routes(), user.allowedMethods());
 
 
 // mount root routes  

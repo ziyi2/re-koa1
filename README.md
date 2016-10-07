@@ -20,6 +20,7 @@
 - [koa-router](https://github.com/alexmingoia/koa-router#exp_module_koa-router--Router)
 - [koa-example](https://github.com/koajs/examples)
 - [koa-guide](https://github.com/guo-yu/koa-guide)
+- [koa-session](https://github.com/koajs/session)
 
 ###gitbook
 - [koa](http://17koa.com/koa-generator-examples/)
