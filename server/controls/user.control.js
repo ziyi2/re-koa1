@@ -36,6 +36,9 @@ module.exports.login = function *(next) {
         };
 
 
+        //需要注意的是yield语句本身是没有返回值的(返回undefined)
+        //next方法可以带一个参数,该参数就会被当作上一个yield语句的返回值
+        //注意一下yield*的返回值
         let queryUser = yield User.findOne({username:loginUser.username});
 
         if(queryUser) {
@@ -58,7 +61,10 @@ module.exports.login = function *(next) {
         }
 
 
-    } catch(e) {
+    } catch(e) {    //在Generator函数体内捕获
+
+        console.log(e);
+
         yield this.render('login',{
             title:'登录',
             session:this.session
@@ -111,6 +117,9 @@ module.exports.register = function *(next) {
             });
         }
     } catch(e) {
+
+        console.log(e);
+
         yield this.render('register',{
             title:'注册',
             session:this.session

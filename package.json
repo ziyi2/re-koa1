@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=local node ./bin/www"
+    "start": "parallelshell \"set NODE_ENV=local\" \"node ./bin/www\"",
+    "start_linux": "NODE_ENV=local node ./bin/www"
   },
   "dependencies": {
     "co": "^4.6.0",
@@ -21,5 +22,8 @@
     "koa-views": "^3.1.0",
     "moment": "^2.15.1",
     "mongoose": "^4.6.3"
+  },
+  "devDependencies": {
+    "parallelshell": "^2.0.0"
   }
 }

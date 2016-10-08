@@ -1,9 +1,19 @@
 # re-koa1
 
 ## 启动
+
+window
+
 ```javascript
-	npm start
+    npm start
 ```
+
+mac os x || linux
+
+```javascript
+	npm run start_linux
+```
+
 
 ## generator生成器
 ```javascript

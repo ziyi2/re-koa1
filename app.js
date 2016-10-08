@@ -1,3 +1,4 @@
+"use strict";
 const app = require('koa')()
   , koa = require('koa-router')()
   , logger = require('koa-logger')

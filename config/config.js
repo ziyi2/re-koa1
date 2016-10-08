@@ -5,8 +5,6 @@
  * describe:    mongodb,redis等数据配置文件
  */
 
-
-
 module.exports = {
     //mongo
     mongodb: {

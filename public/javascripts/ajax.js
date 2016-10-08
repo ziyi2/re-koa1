@@ -24,12 +24,12 @@ function ajax() {
 
     return {
         //账号注册
-        register: function(data) {
-            return req({
-                type: 'POST',
-                url: '/user/register',
-                data: data
-            });
-        }
+        //register: function(data) {
+        //    return req({
+        //        type: 'POST',
+        //        url: '/user/register',
+        //        data: data
+        //    });
+        //}
     };
 }

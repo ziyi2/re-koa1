@@ -16,7 +16,7 @@ module.exports = function(mongoose){
             return;
         }
 
-        //创建Model
+        //引入Model
         require('../server/models/user.model');
 
 

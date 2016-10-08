@@ -27,14 +27,19 @@ $(function() {
     //     //省略校验步骤
     //
     //
-    //     ajax().register(user).then(
-    //         function(data) {
-    //             if(data.status === httpStatus.user_exist) {
-    //                 $('#register_username').val('');
-    //                 alert('用户名已存在');
+    //     ajax().register(user)
+    //         .then(
+    //             function(data) {
+    //                 if(data.status === httpStatus.user_exist) {
+    //                     $('#register_username').val('');
+    //                     alert('用户名已存在');
+    //                 }
+    //             })
+    //         .catch(
+    //             function(err) {
+    //                 console.log(err);
     //             }
-    //         }
-    //     )
+    //         );
     //
     // });
 

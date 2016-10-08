@@ -23,6 +23,12 @@ let UserSchema = new mongoose.Schema({
             let md5 = crypto.createHash('md5');
             return md5.update(`${password}${common.salt}`,'utf8').digest('base64');
         }
+
+        //ES6
+        //set(password) {
+        //    let md5 = crypto.createHash('md5');
+        //    return md5.update(`${password}${common.salt}`,'utf8').digest('base64');
+        //}
     },
     email:{
         type:String,
